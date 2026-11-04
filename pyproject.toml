@@ -21,6 +21,7 @@ classifiers = [
 
 [project.urls]
 "Paid version" = "https://tidybyte.gumroad.com/l/cznmeo"
+Source = "https://github.com/tidybytetools/json-shaper-lite"
 Shop = "https://tidybyte.gumroad.com"
 
 [project.scripts]

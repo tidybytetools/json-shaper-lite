@@ -1,0 +1,17 @@
+# json-shaper-lite
+
+> Free, MIT-licensed, single-file Python tool (no dependencies) that turns `key: value` notes, CSV/TSV and Markdown tables into typed JSON. Numbers become numbers, yes/no and true/false become booleans, empty or "null" becomes null.
+
+- Install: `pip install git+https://github.com/tidybytetools/json-shaper-lite` (or download json_shaper_lite.py)
+- CLI: `json-shaper-lite file.csv --json` prints `{"ok": true, "format": "csv", "data": [...]}`. Reads stdin if no file. `--format kv|csv|markdown` to force a format. Exit 0 ok, 1 error.
+- Python: `from json_shaper_lite import shape; shape("x,y\n1,2")` returns `{"format": "csv", "data": [{"x": 1, "y": 2}]}`.
+
+## Use when
+- You have plain text records or a table and need clean JSON.
+
+## Don't use when
+- The input is already JSON, is nested, or is app logs / US addresses. Logs and addresses are in the paid version: https://tidybyte.gumroad.com/l/cznmeo
+
+## Links
+- [README](https://github.com/tidybytetools/json-shaper-lite/blob/main/README.md)
+- [Paid version](https://tidybyte.gumroad.com/l/cznmeo)
