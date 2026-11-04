@@ -1,10 +1,11 @@
 # json-shaper-lite
 
-> Free, MIT-licensed, single-file Python tool (no dependencies) that turns `key: value` notes, CSV/TSV and Markdown tables into typed JSON. Numbers become numbers, yes/no and true/false become booleans, empty or "null" becomes null.
+> Free, MIT-licensed, Python tool (the converter is one standard-library file; the MCP server needs the mcp package) that turns `key: value` notes, CSV/TSV and Markdown tables into typed JSON. Numbers become numbers, yes/no and true/false become booleans, empty or "null" becomes null.
 
 - Install: `pip install json-shaper-lite` (or from GitHub: `pip install git+https://github.com/tidybytetools/json-shaper-lite`) (or download json_shaper_lite.py)
 - CLI: `json-shaper-lite file.csv --json` prints `{"ok": true, "format": "csv", "data": [...]}`. Reads stdin if no file. `--format kv|csv|markdown` to force a format. Exit 0 ok, 1 error.
 - Python: `from json_shaper_lite import shape; shape("x,y\n1,2")` returns `{"format": "csv", "data": [{"x": 1, "y": 2}]}`.
+- MCP: `uvx json-shaper-lite mcp` (or `uvx --from json-shaper-lite json-shaper-lite-mcp`) exposes two read-only tools: `shape_text_to_json(text, format="auto") -> {"format", "data"}` and `shape_file_to_json(path, format="auto")` for local UTF-8 text files up to 5 MB.
 
 ## Use when
 - You have plain text records or a table and need clean JSON.

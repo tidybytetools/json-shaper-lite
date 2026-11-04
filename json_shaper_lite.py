@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
-"""json-shaper-lite (MIT): free edition. Pro adds log parsing + address splitting: turn messy text into clean JSON. No third-party deps."""
+"""json-shaper-lite (MIT): free edition. Pro adds log parsing + address splitting: turn messy text into clean JSON. This file uses only the Python standard library; the MCP server (json_shaper_lite_mcp.py) needs the mcp package."""
 import argparse, csv, io, json, re, sys
 
-__version__ = "1.0.0"
+__version__ = "1.1.0"
 PRO_URL = "https://tidybyte.gumroad.com/l/cznmeo"
 PRO_LINE = f"Need log files parsed too? json-shaper (paid) does that: {PRO_URL}"
 
@@ -61,8 +61,21 @@ def shape(text, fmt="auto"):
     fmt = detect(text) if fmt == "auto" else fmt
     return {"format": fmt, "data": PARSERS[fmt](text)}
 
+def run_mcp():
+    """Start the stdio MCP server (needs the mcp package, which pip installs for you)."""
+    try:
+        import json_shaper_lite_mcp
+    except ImportError as e:
+        print(f"error: the MCP server needs the mcp package ({e}). Run: pip install json-shaper-lite", file=sys.stderr)
+        return 1
+    json_shaper_lite_mcp.main()
+    return 0
+
 def main(argv=None):
-    p = argparse.ArgumentParser(prog="json-shaper-lite", description="Turn messy text into clean JSON.", epilog=PRO_LINE)
+    argv = sys.argv[1:] if argv is None else argv
+    if argv == ["mcp"]:
+        return run_mcp()
+    p = argparse.ArgumentParser(prog="json-shaper-lite", description="Turn messy text into clean JSON. Run `json-shaper-lite mcp` to start the MCP server (to read a file named mcp, use ./mcp).", epilog=PRO_LINE)
     p.add_argument("file", nargs="?", help="input file (default: stdin)")
     p.add_argument("-f", "--format", default="auto", choices=["auto"] + list(PARSERS))
     p.add_argument("--json", action="store_true", help="machine-readable envelope: {ok, format, data}")
