@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "json-shaper-lite"
+version = "1.0.0"
+description = "Turn key: value notes, CSV/TSV and Markdown tables into clean, typed JSON. No dependencies."
+readme = "README.md"
+license = {text = "MIT"}
+authors = [{name = "tidybyte"}]
+requires-python = ">=3.8"
+keywords = ["json", "csv", "markdown", "converter", "cli"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent",
+  "Environment :: Console",
+  "Topic :: Text Processing",
+]
+
+[project.urls]
+"Paid version" = "https://tidybyte.gumroad.com/l/cznmeo"
+Shop = "https://tidybyte.gumroad.com"
+
+[project.scripts]
+json-shaper-lite = "json_shaper_lite:main"
+
+[tool.setuptools]
+py-modules = ["json_shaper_lite"]
