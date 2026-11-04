@@ -1,5 +1,5 @@
 [build-system]
-requires = ["setuptools>=61"]
+requires = ["setuptools>=77"]
 build-backend = "setuptools.build_meta"
 
 [project]
@@ -7,22 +7,33 @@ name = "json-shaper-lite"
 version = "1.0.0"
 description = "Turn key: value notes, CSV/TSV and Markdown tables into clean, typed JSON. No dependencies."
 readme = "README.md"
-license = {text = "MIT"}
-authors = [{name = "tidybyte"}]
-requires-python = ">=3.8"
-keywords = ["json", "csv", "markdown", "converter", "cli"]
+license = "MIT"
+license-files = ["LICENSE"]
+authors = [{name = "Tidy Byte Tools"}]
+requires-python = ">=3.10"
+dependencies = []
+keywords = ["json", "csv", "tsv", "markdown", "markdown-table", "converter", "text-to-json", "cli"]
 classifiers = [
-  "Programming Language :: Python :: 3",
-  "License :: OSI Approved :: MIT License",
-  "Operating System :: OS Independent",
+  "Development Status :: 4 - Beta",
   "Environment :: Console",
+  "Intended Audience :: Developers",
+  "Intended Audience :: End Users/Desktop",
+  "Operating System :: OS Independent",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3 :: Only",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
   "Topic :: Text Processing",
+  "Topic :: Utilities",
 ]
 
 [project.urls]
-"Paid version" = "https://tidybyte.gumroad.com/l/cznmeo"
+Homepage = "https://tidybyte.gumroad.com/l/cznmeo"
 Source = "https://github.com/tidybytetools/json-shaper-lite"
-Shop = "https://tidybyte.gumroad.com"
+Issues = "https://github.com/tidybytetools/json-shaper-lite/issues"
+Changelog = "https://github.com/tidybytetools/json-shaper-lite/blob/main/CHANGELOG.md"
 
 [project.scripts]
 json-shaper-lite = "json_shaper_lite:main"
