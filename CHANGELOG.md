@@ -2,6 +2,11 @@
 
 What changed in json-shaper-lite, newest first.
 
+## 1.1.1 - 2026-11-09
+
+- Point Homepage, Documentation, and the MCP Registry websiteUrl at the official product page on [tidybytetools.github.io](https://tidybytetools.github.io/tools/json-shaper/).
+- README: add a clear Links section (Website, Apify cloud version where it exists, Pro on Gumroad) and a short FAQ.
+
 ## 1.1.0 - 2026-11-04
 
 - New: a free MCP server, so AI apps like Claude Desktop and Cursor can use it. Start it with `uvx json-shaper-lite mcp` or `json-shaper-lite-mcp`.

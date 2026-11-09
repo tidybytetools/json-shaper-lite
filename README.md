@@ -12,11 +12,18 @@
 [![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](https://github.com/tidybytetools/json-shaper-lite/blob/main/LICENSE)
 [![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-blue.svg)](https://www.python.org/)
 [![MCP server](https://img.shields.io/badge/MCP-stdio-purple.svg)](#use-it-from-claude-desktop-or-cursor-mcp)
+[![MCP Registry](https://img.shields.io/badge/MCP_Registry-listed-green.svg)](https://registry.modelcontextprotocol.io/v0/servers?search=io.github.tidybytetools/json-shaper-lite)
+[![PyPI downloads](https://img.shields.io/pypi/dm/json-shaper-lite.svg)](https://pypistats.org/packages/json-shaper-lite)
 
 Free tool that turns `key: value` notes, CSV/TSV and Markdown tables into clean JSON.
 Need app logs or US addresses parsed too? The paid version does that: **[json-shaper on Gumroad](https://tidybyte.gumroad.com/l/cznmeo)**
 
 Plain code, not AI, so the same text always gives the same JSON. Runs on your own computer. MIT license. Works with Python 3.10 and newer, on Windows, Mac and Linux.
+
+## Links
+
+- **[Website](https://tidybytetools.github.io/tools/json-shaper/)** — product page with prices and options
+- **[Pro version on Gumroad](https://tidybyte.gumroad.com/l/cznmeo)** — app logs and US address parsing
 
 <!-- mcp-name: io.github.tidybytetools/json-shaper-lite -->
 
@@ -147,6 +154,19 @@ python3 -m unittest discover tests
 
 The MCP tests are skipped if `mcp` is not installed.
 
+## FAQ
+
+**What input does it take?**
+key: value notes, CSV/TSV, or a Markdown table.
+
+**Do my files leave my computer?**
+No. The tool runs on your computer and never uses the internet.
+
+**How is this different from the Pro version?**
+Pro also parses app logs and one-line US addresses.
+
+**Does it work with AI apps?**
+Yes. It includes a free MCP server. No API key.
 ## License
 
 MIT. See `LICENSE`.
