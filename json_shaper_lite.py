@@ -30,6 +30,12 @@ def parse_kv(text):
     if cur: records.append(cur)
     return records[0] if len(records) == 1 else records
 
+def _record(head, row, lineno):
+    if len(row) > len(head):
+        raise ValueError(f"row {lineno} has {len(row)} fields, expected {len(head)}")
+    row = row + [""] * (len(head) - len(row))
+    return {h: _num(c) for h, c in zip(head, row)}
+
 def parse_csv(text):
     sample = text[:2048]
     try: dialect = csv.Sniffer().sniff(sample, delimiters=",;\t|")
@@ -37,7 +43,7 @@ def parse_csv(text):
     rows = [r for r in csv.reader(io.StringIO(text.strip()), dialect) if any(c.strip() for c in r)]
     if not rows: return []
     head = [_key(h) for h in rows[0]]
-    return [{h: _num(c) for h, c in zip(head, r)} for r in rows[1:]]
+    return [_record(head, r, i) for i, r in enumerate(rows[1:], start=2)]
 
 def parse_markdown_table(text):
     lines = [l.strip() for l in text.splitlines() if l.strip().startswith("|")]
@@ -45,7 +51,7 @@ def parse_markdown_table(text):
     cells = [[c.strip() for c in l.strip("|").split("|")] for l in lines]
     if not cells: return []
     head = [_key(h) for h in cells[0]]
-    return [{h: _num(c) for h, c in zip(head, r)} for r in cells[1:]]
+    return [_record(head, r, i) for i, r in enumerate(cells[1:], start=2)]
 
 def detect(text):
     t = text.strip()
