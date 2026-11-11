@@ -2,7 +2,7 @@
 """json-shaper-lite (MIT): free edition. Pro adds log parsing + address splitting: turn messy text into clean JSON. This file uses only the Python standard library; the MCP server (json_shaper_lite_mcp.py) needs the mcp package."""
 import argparse, csv, io, json, re, sys
 
-__version__ = "1.1.1"
+__version__ = "1.1.2"
 PRO_URL = "https://tidybyte.gumroad.com/l/cznmeo"
 PRO_LINE = f"Need log files parsed too? json-shaper (paid) does that: {PRO_URL}"
 

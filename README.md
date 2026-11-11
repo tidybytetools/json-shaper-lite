@@ -97,6 +97,7 @@ When you run it in a terminal it prints one short line about the paid version to
 - **It makes flat JSON.** It does not flatten or unflatten nested JSON. For that, use a tool like flatten-json.
 - **Types are a best guess.** A value like `007` or a zip code can turn into a number. Fix those by hand after.
 - **One table per run.** Two Markdown tables in one file get mixed together. Split them first.
+- **Ragged rows.** A CSV or Markdown row with more fields than the header is an error (exit 1). A short row keeps every header key and fills the missing ones with null.
 - **No app logs or addresses.** Those are in the paid version.
 
 ## How it compares to other free tools

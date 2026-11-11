@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "json-shaper-lite"
-version = "1.1.1"
+version = "1.1.2"
 description = "Turn key: value notes, CSV/TSV and Markdown tables into clean, typed JSON. CLI and MCP server. Runs locally."
 readme = "README.md"
 license = "MIT"

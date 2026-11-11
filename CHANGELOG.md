@@ -2,6 +2,11 @@
 
 What changed in json-shaper-lite, newest first.
 
+## 1.1.2 - 2026-11-10
+
+- CSV and Markdown tables no longer drop extra fields or hide missing columns. A row that is longer than the header is now an error (exit 1). A short row keeps every header key and fills the empty ones with null.
+- Thank you [Qrytics](https://github.com/Qrytics) for the fix and tests ([#1](https://github.com/tidybytetools/json-shaper-lite/pull/1)).
+
 ## 1.1.1 - 2026-11-09
 
 - Point Homepage, Documentation, and the MCP Registry websiteUrl at the official product page on [tidybytetools.github.io](https://tidybytetools.github.io/tools/json-shaper/).
