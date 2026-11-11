@@ -20,12 +20,31 @@ Need app logs or US addresses parsed too? The paid version does that: **[json-sh
 
 Plain code, not AI, so the same text always gives the same JSON. Runs on your own computer. MIT license. Works with Python 3.10 and newer, on Windows, Mac and Linux.
 
+Also searched as: ES: convertir CSV a JSON, notas a JSON / PT: converter CSV para JSON / DE: CSV in JSON umwandeln / FR: convertir un CSV en JSON / JA: CSVをJSONに変換
+
 ## Links
 
 - **[Website](https://tidybytetools.github.io/tools/json-shaper/)** — product page with prices and options
 - **[Pro version on Gumroad](https://tidybyte.gumroad.com/l/cznmeo)** — app logs and US address parsing
 
 <!-- mcp-name: io.github.tidybytetools/json-shaper-lite -->
+
+## Before and after
+
+Before (a small table or `key: value` notes):
+
+```
+name: Ada
+city: London
+```
+
+After:
+
+```json
+{"name": "Ada", "city": "London"}
+```
+
+CSV, TSV, and Markdown tables work the same way. This free tool makes flat JSON; it does not flatten nested JSON the other direction.
 
 ## Install
 
