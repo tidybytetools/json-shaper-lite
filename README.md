@@ -9,13 +9,41 @@
 
 # json-shaper-lite
 
+[![Tests](https://github.com/tidybytetools/json-shaper-lite/actions/workflows/tests.yml/badge.svg)](https://github.com/tidybytetools/json-shaper-lite/actions/workflows/tests.yml)
 [![License: MIT](https://img.shields.io/badge/license-MIT-green.svg)](https://github.com/tidybytetools/json-shaper-lite/blob/main/LICENSE)
-[![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-blue.svg)](https://www.python.org/)
-[![MCP server](https://img.shields.io/badge/MCP-stdio-purple.svg)](#use-it-from-claude-desktop-or-cursor-mcp)
-[![MCP Registry](https://img.shields.io/badge/MCP_Registry-listed-green.svg)](https://registry.modelcontextprotocol.io/v0/servers?search=io.github.tidybytetools/json-shaper-lite)
-[![PyPI downloads](https://img.shields.io/pypi/dm/json-shaper-lite.svg)](https://pypistats.org/packages/json-shaper-lite)
+[![Version](https://img.shields.io/github/v/release/tidybytetools/json-shaper-lite?label=version)](https://github.com/tidybytetools/json-shaper-lite/releases)
 
 Free tool that turns `key: value` notes, CSV/TSV and Markdown tables into clean JSON.
+
+## Example
+
+Input (`menu.tsv` from the tests folder):
+
+```
+Item	Price	In stock
+Tea	2.50	yes
+Cake	4	no
+```
+
+Output from an actual run of `json-shaper-lite`:
+
+```json
+[
+  {
+    "item": "Tea",
+    "price": 2.5,
+    "in_stock": true
+  },
+  {
+    "item": "Cake",
+    "price": 4,
+    "in_stock": false
+  }
+]
+```
+
+Header names are cleaned, prices stay numbers, and yes/no become true/false. `key: value` notes and Markdown tables work the same way. This free tool makes flat JSON; it does not flatten nested JSON the other direction.
+
 Need app logs or US addresses parsed too? The paid version does that: **[json-shaper on Gumroad](https://tidybyte.gumroad.com/l/cznmeo)**
 
 Plain code, not AI, so the same text always gives the same JSON. Runs on your own computer. MIT license. Works with Python 3.10 and newer, on Windows, Mac and Linux.
@@ -25,26 +53,10 @@ Also searched as: ES: convertir CSV a JSON, notas a JSON / PT: converter CSV par
 ## Links
 
 - **[Website](https://tidybytetools.github.io/tools/json-shaper/)** — product page with prices and options
+- **[Excel & CSV to JSON on Apify](https://apify.com/tidybytetools/excel-to-json)** — a pay-per-use cloud tool for Excel and CSV files (not for `key: value` notes or Markdown tables)
 - **[Pro version on Gumroad](https://tidybyte.gumroad.com/l/cznmeo)** — app logs and US address parsing
 
 <!-- mcp-name: io.github.tidybytetools/json-shaper-lite -->
-
-## Before and after
-
-Before (a small table or `key: value` notes):
-
-```
-name: Ada
-city: London
-```
-
-After:
-
-```json
-{"name": "Ada", "city": "London"}
-```
-
-CSV, TSV, and Markdown tables work the same way. This free tool makes flat JSON; it does not flatten nested JSON the other direction.
 
 ## Install
 
